@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<title>Grant University</title>
+	
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="100%" style="position: relative; height: 100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td bgcolor="#000080" width="20%" valign="top" align="center">
+					<br/><br/>
+					<h:form>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Home" value="Home">
+						</h:commandLink>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="AboutUs" value="AboutUs">
+						</h:commandLink>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Registration" value="Registration">
+						</h:commandLink>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Admissions" value="Admissions">
+						</h:commandLink>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="ContactUs" value="ContactUs">
+						</h:commandLink>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="CourseDetails" value="CourseDetails">
+						</h:commandLink>
+						<br/><br/><br/><br/>
+						
+						<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+							<tr>
+								<td bgcolor="#000080">
+									<p style="font-size: 14pt; color: #ffffff">Account Login</p>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#000080">
+									<table border="0" align="center" width="100%">
+										<h:form>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Id:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="20" id="id" value="#{bean.id}" />
+												</td>
+											</tr>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Password:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="21" id="pass" value="#{bean.pass}" />
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<p style="color:#ffffff"></p>
+												</td>
+												<td align="center">
+													<h:commandButton value="Submit" action="#{bean.Action}"/>
+												</td>
+												<td align="center">
+													<h:commandButton value="Reset" type="reset"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<td width="85%" valign="top" bgcolor="white">
+							<!-- Page specific content starts here -->
+								<p style="font-size:12pt"/>
+								<br/>
+								<p style="color:darkblue; font-size:20pt" align="center">
+									<b>Course Details</b>
+								</p>
+								<br/><br/>
+								<table border="0" width="50%" align="center">
+									<h:form>
+										<tr>
+											<td>Select Course Name</td>
+											<td>:</td>
+											<td align="center">
+												<h:selectOneMenu id="cName" value="#{CourseDetailsBean.CourseName}" valueChangeListener="#{CourseDetailsBean.CourseDetailsAction}" onchange="this.form.submit()">
+													<f:selectItem itemValue="" itemLabel=""/>
+													<f:selectItem itemValue="Science" itemLabel="Science"/>
+													<f:selectItem itemValue="Law" itemLabel="Law"/>
+													<f:selectItem itemValue="Medical" itemLabel="Medical"/>
+													<f:selectItem itemValue="Management" itemLabel="Management"/>
+												</h:selectOneMenu>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<br/>
+												Course Id
+											</td>
+											<td>
+												<br/>
+												:
+											</td>
+											<td align="center">
+												<br/>
+												<h:outputText id="cId" value="#{CourseDetailsBean.CourseId}"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<br/>
+												Course Duration
+											</td>
+											<td>
+												<br/>
+												:
+											</td>
+											<td align="center">
+												<br/>
+												<h:outputText id="cDuration" value="#{CourseDetailsBean.CourseDuration}"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<br/>
+												Course Eligibility
+											</td>
+											<td>
+												<br/>
+												:
+											</td>
+											<td align="center">
+												<br/>
+												<h:outputText id="cEligibility" value="#{CourseDetailsBean.CourseEligibility}"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<br/>
+												Course Fee
+											</td>
+											<td>
+												<br/>
+												:
+											</td>
+											<td align="center">
+												<br/>
+												<h:outputText id="cFee" value="#{CourseDetailsBean.CourseFee}"/>
+											</td>
+										</tr>
+									</h:form>
+								</table>
+						</td>		
+					</h:form>
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>

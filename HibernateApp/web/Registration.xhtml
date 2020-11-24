@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<title>Grant University</title>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="100%" style="position: relative; height: 100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td bgcolor="#000080" width="20%" valign="top" align="center">
+					<br/><br/>
+					<h:form>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Home" value="Home"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="AboutUs" value="AboutUs"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Registration" value="Registration"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Admissions" value="Admissions"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="ContactUs" value="ContactUs"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="CourseDetails" value="CourseDetails">
+						</h:commandLink>
+						<br/><br/><br/><br/>
+						
+						<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+							<tr>
+								<td bgcolor="#000080">
+									<p style="font-size: 14pt; color: #ffffff">Account Login</p>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#000080">
+									<table border="0" align="center" width="100%">
+										<h:form>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Id:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="20" id="id" value="#{Bean.id}"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Password:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="21" id="pass" value="#{Bean.pass}"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<p style="color:#ffffff"></p>
+												</td>
+												<td align="center">
+													<h:commandButton value="Submit" action="#{Bean.Action}"/>
+												</td>
+												<td align="center">
+													<h:commandButton value="Reset" type="reset"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</td>
+				<!-- Page specific content starts here -->
+					<td width="85%" valign="top" bgcolor="white">
+						<p style="color:darkblue; font-size:20pt" align="center">
+							Registration Form
+						</p><br/>
+						<table bgcolor="black" cellpadding="12px" border="1" width="60%" align="center" style="height:120px">
+							<tr>
+								<td bgcolor="white">
+									<table border="0" width="100%" bgcolor="white" align="center" style="height:100px">
+										<h:form>
+											<tr>
+												<td>First Name: </td>
+													<f:ajax event="change" render="nameError">
+												<td>
+													<h:inputText id="FirstName" value="#{RegistrationForm.FirstName}" required="true" requiredMessage="You must enter the first name" validator="#{registration.validateName}" />
+													<h:message for="FirstName" id="nameError" style="color:red"/>
+												</td>
+													</f:ajax>
+											</tr>
+											<tr>
+												<td>Last Name: </td>
+												<td><h:inputText value="#{RegistrationForm.LastName}" id="LastName" required="true" requiredMessage="You must enter the last name"/>
+													<h:message for="LastName" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Select Gender: </td>
+												<td>
+													<h:selectOneRadio value="#{RegistrationForm.Gender}" id="Gender" required="true" requiredMessage="You must select the gender">
+													<h:message for="Gender" style="color:red"/>
+														<f:selectItem itemValue="m" itemLabel="Male"/>
+														<f:selectItem itemValue="f" itemLabel="Female"/>
+													</h:selectOneRadio>
+												</td>
+											</tr>
+											<tr>
+												<td>Date of Birth: </td>
+												<td>
+													<h:inputText id="DateOfBirth" value="#{RegistrationForm.DateOfBirth}" converterMessage="Enter DOB in MM/DD/YY format" required="true" requiredMessage="You must enter the date">
+														<f:convertDateTime pattern="MM/dd/yy" type="date"/>
+													</h:inputText>
+													<h:message for="DateOfBirth" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Address: </td>
+												<td><h:inputTextarea rows="3" value="#{RegistrationForm.Address}" id="Address" required="true" requiredMessage="You must enter the address"/>
+													<h:message for="Address" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Phone Number: </td>
+												<td><h:inputText value="#{RegistrationForm.ContactNo}" id="ContactNo" required="true" requiredMessage="You must enter the contact no.">
+														<f:validateRegex pattern="\+[0-9]{2}-+[0-9]{3}-+[0-9]{8}"/>
+													</h:inputText>
+													<h:message for="ContactNo" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>E-mail Id: </td>
+												<td><h:inputText value="#{RegistrationForm.EmailId}" id="EmailId" required="true" requiredMessage="You must enter the email id" validator="#{RegistrationForm.validateEmailId}" validatorMessage="Invalid e-mail Id"/>
+													<h:message for="EmailId" style="color:red"/>
+												</td>
+											</tr>
+                                                                                        <tr>
+												<td>Course: </td>
+												<td><h:selectOneMenu id="cname" value="#{RegistrationForm.Course}">
+													<f:selectItem itemValue="NULL" itemLabel="Select a Course" />
+                                                                                                        <f:selectItem itemValue="A-101" itemLabel="Computer Science" />
+                                                                                                        <f:selectItem itemValue="B-105" itemLabel="Law" />
+                                                                                                        <f:selectItem itemValue="C-110" itemLabel="Medical" />
+                                                                                                        <f:selectItem itemValue="D-115" itemLabel="Management" />
+                                                                                                    </h:selectOneMeNu>
+												</td>
+											</tr>
+											<tr>
+												<td>User Id: </td>
+												<td><h:inputText size="10" value="#{RegistrationForm.UserId}" id="UserId" required="true" requiredMessage="It should be at least 6 characters long">
+														<f:validateLength minimum="6"/>
+													</h:inputText>
+													<h:message for="UserId" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Password: </td>
+												<td><h:inputSecret size="12" value="#{RegistrationForm.Password}" id="Password" required="true" requiredMessage="You must enter the password" validatorMessage="Password mus be minimum 5 characters long" validator="#{RegistrationForm.validatePassword}">
+														<f:validateLength minimum="5"/>	
+													</h:inputSecret>	
+												<h:message for="Password" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Confirm Password: </td>
+												<td><h:inputSecret size="12" value="#{RegistrationForm.ConfirmPassword}" id="ConfirmPassowrd" required="true" requiredMessage="You must confirm the password" validator="#{RegistrationForm.validateConfirmPassword}"/>
+													<h:message for="ConfirmPassword" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="right"><br/>
+													<h:commandButton value="Submit" action="#{RegistrationForm.submitAction}"/>
+												</td>
+												<td align="left"><br/>
+													<h:commandButton value="Reset" immediate="true" action="Registration"/>
+												</td>
+											</tr>
+                                                                                        <tr>
+                                                                                                <p><h:outputText style="color:red" value="{RegistrationForm.UserIDError}" /></p>
+                                                                                        </tr>
+										</h:form>
+									</table>
+								</td>			
+							</tr>
+						</table>	
+					</td>
+				<!-- Page specific content ends here -->	
+			</tr>		
+		</table>
+	</h:body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "Employee">
+    <class name="EmployeeType"
+        table="EMPLOYEETYPE" discriminator-value="E">
+        <id name="Id" type="long">
+            <column name="ID" />
+                <generator class="assigned" />
+        </id>
+        <discriminator column="emp_type" type="java.lang.String" />
+            <property name="Name" type="java.lang.String">
+                <column name="NAME" />
+            </property>
+            <subclass name="PermanentEmployee" extends="EmployeeType" discriminator-value="RE">
+                <property name="Salary"></property>
+            </subclass>
+            <subclass name="ContractualEmployee" extends="EmployeeType" discriminator-value="CE">
+                <property name="HourlyRate"></property>
+                <property name="ContractPeriod"></property>
+            </subclass>
+    </class-name>
+</hibernate-mapping>

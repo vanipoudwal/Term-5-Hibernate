@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<title>Grant University</title>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="100%" style="height:100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<h2>Welcome &nbsp;
+			<h:outputText id="o1" value="#{RegistrationForm.FirstName}"/>&nbsp;
+			<h:outputText id="o2" value="#{RegistrationForm.LastName}"/>&nbsp;
+		</h2>
+		<h2>
+			You have successfully registered with our website. <br/>
+			Your User ID is: &nbsp;
+			<h:outputText id="o3" value="#{RegistrationForm.userID}"/>
+		</h2>
+		<table>
+			<tr>
+				<td align="center">
+					<h:form>
+						<h:commandButton value="Home" action="Home"/>
+					</h:form>
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>

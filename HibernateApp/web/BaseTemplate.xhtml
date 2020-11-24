@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+      xmlns:lc="http://java.sun.com/jsf/composite/LoginControl">
+
+	<h:head>
+		<title>Grant University</title>
+	</h:head>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="top" width="100%" style="height:100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+				</td>
+				<td bgcolor="666699" align="left" width="120" height="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td bgcolor="#000080" width="20%" valign="top" align="center">
+						<br/><br/>
+					<h:form>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="Home" value="Home" /> <br/><br/> </u></b>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="AboutUs" value="About Us" /> <br/><br/> </u></b>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="Registration" value="Registration" /> <br/><br/> </u></b>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="Admissions" value="Admissions" /> <br/><br/> </u></b>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="ContactUs" value="Contact Us" /> <br/><br/> </u></b>
+						<b><u>	<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color:white" styleClass="fFormat" action="CourseDetails" value="Course Details" /> </u></b>
+					</h:form>
+							<br/><br/><br/><br/>
+						<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+							<tr>
+								<td bgcolor="#000080">
+									<p style="font-size: 14pt; color: #ffffff">Account Login</p>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#000080">
+									<table border="0" align="center" width="100%">
+										<h:form>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Id :: </p>
+												</td>
+												<td align="left">
+													<h:inputText size="16" id="id" value="#{bean.id}" />
+												</td>
+											</tr>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Password :: </p>
+												</td>
+												<td align="left">
+													<h:inputText size="16" id="pass" value="#{bean.pass}" />
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<h:commandButton styleClass="button" value="Submit" action="#{bean.Action}" />
+												</td>
+												<td align="center">
+													<h:commandButton styleClass="button" value="Reset" type="reset" />
+												</td>
+											</tr>
+										</h:form>
+										<lc:LoginControl Username="#{bean.id}" password="#{bean.pass}" submitValue="Submit" resetValue="Reset" />
+									</table>
+								</td>
+							</tr>
+						</table>
+				</td>
+					<!-- Page specific content starts here -->
+				<td width="85%" valign="top" bgcolor="white">
+					<ui:insert name="body" />
+				</td>
+			</tr>
+		</table>
+	</h:body>
+
+</html>
+					

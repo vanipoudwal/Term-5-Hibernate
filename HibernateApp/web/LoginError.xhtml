@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+      xmlns:lc="http://java.sun.com/jsf/composite/LoginControl">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<title>Grant University</title>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="100%" style="height: 100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="color:#FFF0F5">
+						<p style="font-size:38pt;color:#ffffff;font-family:Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+					</p>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td>
+				<lc:LoginControl Username="#{bean.id}" Password="#{bean.pass}" submitValue="Submit" resetValue="Reset" />
+					<br/><br/><br/><br/>
+					<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+						<tr>
+							<td bgcolor="#000080">
+								<p style="font-size: 14pt; color: #ffffff">
+									Account Login
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#000080">
+								<table border="0" align="center" width="100%">
+									<h:form>
+										<tr>
+											<td align="left">
+												<p style="color:#ffffff">Id:</p>
+											</td>
+											<td align="left">
+												<h:inputText size="20" id="id" value="#{bean.id}">
+												</h:inputText>
+											</td>
+										</tr>
+										<tr>
+											<td align="left">
+												<p style="color:#ffffff">Password:</p>
+											</td>
+											<td align="left">
+												<h:inputSecret size="20" id="pass" value="#{bean.pass}">
+												</h:inputSecret>
+											</td>
+										</tr>
+										<tr>
+											<td align="left">
+												<h:commandButton styleClass="button" value="Submit" action="#{bean.Action}"/>
+											</td>
+											<td align="left">
+												<h:commandButton styleClass="button" value="Reset" type="reset"/>
+											</td>
+										</tr>
+									</h:form>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="85%" valign="top" bgcolor="white">
+					<br/>
+					<p style="size:15pt; color:red">
+						<b>Incorrect User Name And Password</b>
+					<br/>
+						<h:form>
+							<h:commandButton styleClass="button" value="Home" action="Home"></h:commandButton>
+						</h:form>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>

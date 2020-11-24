@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "university.StudentCourse" table="STUDENTCOURSE">
+        <id name = "registrationnumber" type="int">
+            <column name = "REGISTRATIONNUMBER" />
+                <generator class = "assigned" />
+        </id>
+        <property name= "courseid" type="String">
+            <column name = "COURSEID" length="10" />
+        </property>
+    </class>
+    
+    <version name="version" access="field" column="VERSION" />
+    <property name="registrationnumber" type="integer">
+        <column name="REGISTRATIONNUMBER" length="10" />
+    </property>
+</hibernate-mapping>

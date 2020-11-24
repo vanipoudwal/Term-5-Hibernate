@@ -1,0 +1,50 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "com.learning.hibernate.model.author" table = "author">
+        <id name = "AuthorID" type = "int">
+            <coloumn name = "AuthorID" />
+            <generator class = "assigned" />
+        </id>
+
+        <proprty name = "AuthorName" type = "java.lang.String">
+            <column name = "AuthorName" />
+        </proprty>
+
+        <set cascade = "all" name = "Books">
+            <key column = "AuthorID" />
+            <one-to-many class = "com.learning.hibernate.model.books" />
+        </set>
+    </class>
+
+    <class name = "com.learning.hibernate.model.author" table = "Books">
+        <id name = "id" type = "int">
+            <coloumn name = "id" />
+            <generator class = "increment" />
+        </id>
+
+        <property name="BookID" type="int">
+            <column name="BookID"/>
+        </property>
+        <property name="Name" type="java.lang.String">
+            <column name="Name"/>
+        </property>
+        <property name="Title" type="java.lang.String">
+            <column name="Title"/>
+        </property>
+        <property name="Price" type="double">
+            <column name="Price"/>
+        </property>
+        <property name="isbn" type="java.lang.String">
+            <column name="isbn"/>
+        </property>
+        <property name="Pages" type="jint">
+            <column name="Pages"/>
+        </property>    
+    </class>
+</hibernate-mapping>

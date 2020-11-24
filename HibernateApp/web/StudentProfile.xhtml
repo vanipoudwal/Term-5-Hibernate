@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<title>Grant University</title>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="100%" style="height: 100px">
+			<tr>
+				<td bgcolor="#000080" align="center">
+					<p style="color:#FFF0F5">
+						<p style="font-size:38pt;color:#ffffff;font-family:Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+					</p>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/education.jpg" width="180" height="160" />
+				</td>
+			</tr>
+		</table>
+		<table border="0" width="60%" align="center">
+			<tr>
+				<td align="center">
+					<p align="center" style="color: darkblue; font-size: 20pt">
+						Student Profile Form
+					</p>
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<table bgcolor="black" cellpadding="12px" border="1" width="60%" align="center" style="height:120px">
+			<tr>
+				<td bgcolor="white">
+					<table border="0" width="100%" bgcolor="white" align="center" style="height:100px">
+						<tr>
+							<td>First Name</td>
+							<td>:</td>
+							<td><h:outputText value="John"/></td>
+						</tr>
+						<tr>
+							<td>Last Name</td>
+							<td>:</td>
+							<td><h:outputText value="Williams"/></td>
+						</tr>
+						<tr>
+							<td>Gender</td>
+							<td>:</td>
+							<td><h:outputText value="Male"/></td>
+						</tr>
+						<tr>
+							<td>Date Of Birth</td>
+							<td>:</td>
+							<td><h:outputText value="09/05/92"/></td>
+						</tr>
+						<tr>
+							<td>Address</td>
+							<td>:</td>
+							<td><h:outputText value="121, Verbo Street, California"/></td>
+						</tr>
+						<tr>
+							<td>Phone No.</td>
+							<td>:</td>
+							<td><h:outputText value="11-222-77348762"/></td>
+						</tr>
+						<tr>
+							<td>Email Id</td>
+							<td>:</td>
+							<td><h:outputText value="john@live.com"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><br/>
+								<h:form>
+									<h:commandButton value="Log Out" action="Home"/>
+								</h:form>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>
