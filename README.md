@@ -1,2 +1,2 @@
 # Term-5-Hibernate
-This repository is used to write HIBERNATE Code.
+This Repository Is Used To Write Hibernate Mapping Code.
